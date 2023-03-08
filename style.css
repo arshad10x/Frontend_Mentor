@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+
+:root{
+    --active-input-border:linear-gradient(
+        90deg,
+        (249, 99%, 64%) 0%,
+        (278, 94%, 30%) 100%
+    );
+    --input-errors:hsl(0, 100%, 66%);
+    --Light-grayish-violet: hsl(270, 3%, 87%);
+    --Very-dark-violet: hsl(278, 68%, 11%);
+
+    font-size: 10px;
+}
+
+*{
+    font-family: 'Space Grotesk', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1em;
+    box-sizing: border-box;
+}
+
+body{
+    font-size: 1.8rem;
+    font-weight: 500;
+    height: 100vh;
+    background-image: url('./images/bg-main-mobile.png');
+    background-repeat: no-repeat;
+    background-size: 100% 24rem;
+}
+
+main{
+    max-width: 37.5rem;
+    padding:3.2rem 1.5rem;
+    margin: 0 auto;
+}
+
+img{
+    display: block;
+}
+
+.card{
+    position: relative;
+    height: 25.2rem;
+}
+
+.card-back{
+    position: relative;
+    max-width: 28.6rem;
+    margin: 0 0 0 auto;
+}
+
+.card-back img{
+    width: 100%;
+}
+
+.card-img  .cvv{
+    position: absolute;
+    top:0;
+    height: 100%;
+    width: 100%;
+    font-size: 1rem;
+    letter-spacing: 0.65em;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 3.6rem;
+    color:white;
+}
+
+.card-front{
+    max-width: 28.6rem;
+    position: absolute;
+    top:9.4rem;
+}
+
+.card-front img{
+    width: 100%;
+}
+
+.card-details{
+    position: absolute;
+    top:0;
+    padding: 1.8rem 1.2rem;
+    width: 100%;
+    height: 100%;
+}
+
+.card-details img{
+    width: 5.4rem;
+    margin-bottom: 4rem;
+}
+.card-number{
+    display: block;
+    letter-spacing: 0.12rem;
+    color:white;
+    margin-bottom: 2rem;
+}
+
+.info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1rem;
+    letter-spacing: 0.65em;
+    color:white;
+    text-transform: uppercase;
+}
