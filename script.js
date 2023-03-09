@@ -78,7 +78,7 @@ const validateInput = (input, arrInfoErr, wordLength) => {
 
 function restrictNumber(event){
   var z=event.charCode;
-  if(z>64 && z<91 || (z > 96 && z < 123))
+  if(z>64 && z<91 || (z > 96 && z < 123)||(z==32))
   return true;
   else
       alert("Only characters is allowed");
@@ -94,13 +94,18 @@ inputName.addEventListener("input", (e) => {
 
 // For only numbers
 
+
+
+
 function restrictAlphabets(e) {
   var x = e.which || e.keycode;
-  if ((x >= 48 && x <= 57))
-      return true;
-  else
-      alert("Value must be a number");
-      return false;
+  if ((x >= 48 && x <= 57)){
+    return true;
+  }
+  else{
+    alert("Value must be a number");
+    return false;
+  }
 }
 
 inputNumber.addEventListener("input", (e) => {
