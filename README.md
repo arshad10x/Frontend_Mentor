@@ -1,6 +1,6 @@
 # Interactive card details form
 
-![Design preview for the Interactive card details](./design/desktop-preview.jpg)
+ [view here]()
 
 ## The challenge
 
