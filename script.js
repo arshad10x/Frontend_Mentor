@@ -10,20 +10,20 @@ const inputMonth = document.querySelector("#month");
 const inputYear = document.querySelector("#year");
 const inputCVC = document.querySelector("#cvc");
 
-const infoError = document.querySelectorAll(".info-error");
+const infoErr = document.querySelectorAll(".info-err");
 const complete = document.querySelector(".complete");
 
-console.log(infoError);
+console.log(infoErr);
 
-const showError = (input, arrInfoError, message) => {
-  input.classList.add("input-error");
-  infoError[arrInfoError].classList.add("d-block");
-  infoError[arrInfoError].textContent = message;
+const showError = (input, arrInfoErr, message) => {
+  input.classList.add("input-err");
+  infoErr[arrInfoErr].classList.add("d-block");
+  infoErr[arrInfoErr].textContent = message;
 };
 
-const hideError = (input, arrInfoError) => {
-  input.classList.remove("input-error");
-  infoError[arrInfoError].classList.remove("d-block");
+const hideError = (input, arrInfoErr) => {
+  input.classList.remove("input-err");
+  infoErr[arrInfoErr].classList.remove("d-block");
 };
 
 let inputNameValue;
@@ -32,27 +32,29 @@ let inputMonthValue = "00";
 let inputYearValue = "00";
 let inputCVCValue;
 
-const validateInput = (input, arrInfoError, wordLength) => {
+
+
+const validateInput = (input, arrInfoErr, wordLength) => {
   if (!wordLength) {
     if (!input.value) {
-      showError(input, arrInfoError, "Can’t be blank");
+      showError(input, arrInfoErr, "Can’t be blank");
     } else {
-      hideError(input, arrInfoError);
+      hideError(input, arrInfoErr);
       inputNameValue = input.value;
     }
   } else {
     if (!input.value) {
-      showError(input, arrInfoError, "Can’t be blank");
+      showError(input, arrInfoErr, "Can’t be blank");
     } else if (!/^\d+(\s\d+)*$/.test(input.value)) {
-      showError(input, arrInfoError, "Wrong format, numbers only");
+      showError(input, arrInfoErr, "Wrong format, numbers only");
     } else if (input.value.length < wordLength) {
       if (wordLength > 3) {
-        showError(input, arrInfoError, "Card number must be 16 numbers");
+        showError(input, arrInfoErr, "Card number must be 16 numbers");
       } else {
-        showError(input, arrInfoError, `must be ${wordLength} numbers`);
+        showError(input, arrInfoErr, `must be ${wordLength} numbers`);
       }
     } else {
-      hideError(input, arrInfoError);
+      hideError(input, arrInfoErr);
 
       switch (input) {
         case inputNumber:
@@ -72,12 +74,34 @@ const validateInput = (input, arrInfoError, wordLength) => {
   }
 };
 
+//for only characters
+
+function restrictNumber(event){
+  var z=event.charCode;
+  if(z>64 && z<91 || (z > 96 && z < 123))
+  return true;
+  else
+      alert("Only characters is allowed");
+  return false;
+}
+
 inputName.addEventListener("input", (e) => {
   e.preventDefault();
-
+  
   inputNameValue = e.target.value;
   cardName.textContent = inputNameValue;
 });
+
+// For only numbers
+
+function restrictAlphabets(e) {
+  var x = e.which || e.keycode;
+  if ((x >= 48 && x <= 57))
+      return true;
+  else
+      alert("Value must be a number");
+      return false;
+}
 
 inputNumber.addEventListener("input", (e) => {
   e.preventDefault();
@@ -93,6 +117,7 @@ inputNumber.addEventListener("input", (e) => {
 
   inputNumberValue = e.target.value;
   cardNumber.textContent = inputNumberValue;
+
 });
 
 const deleteSpace = (input) => {
