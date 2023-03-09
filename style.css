@@ -228,3 +228,11 @@ form{
     color: var(--Dark-grayish-violet);
     margin-bottom: 5rem;
   }
+
+  @media screen and (min-width: 1440px){
+    body{
+        background-image: url("./images/bg-main-desktop.png");
+        background-repeat: no-repeat;
+        background-size: 33.5% 100%;
+    }
+  } 
