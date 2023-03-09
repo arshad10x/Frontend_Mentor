@@ -1,5 +1,7 @@
 # Interactive card details form
 
+![card-details](https://user-images.githubusercontent.com/76579075/224133775-09544480-1e81-42e4-9f24-e8ccfca14a15.PNG)
+
  ### Live URL: [view here](https://arshad10x.github.io/intractive-card-form/)
 
 ## The challenge
