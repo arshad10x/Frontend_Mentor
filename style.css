@@ -53,7 +53,7 @@ form {
   border-color: var(--active-input-border) !important;
 }
 
-.info-err {
+.info-error {
   display: none;
   margin-top: 1rem;
   font-size: 1.2rem;
@@ -68,7 +68,7 @@ form {
   display: none !important;
 }
 
-.input-err {
+.input-error {
   border-color: var(--input-errors) !important;
 }
 
